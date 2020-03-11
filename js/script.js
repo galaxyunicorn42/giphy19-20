@@ -3,12 +3,13 @@
 console.log('hi');
 
 $('button').click(function(){
-   fetch("https://api.giphy.com/v1/gifs/search?rating=pg&api_key=dc6zaTOxFJmzC&q=puppy")
+   fetch("https://api.giphy.com/v1/gifs/search?&api_key=wr5FTD48d1jb75Qn4rg9zh7nF9D93cpi&rating=pg&q=puppy")
 .then(function(response) {
         return response.json();
 })
 .then(function(data){
-console.log(data);
+var url =data.data[0].images.original.url;
+$(".gif").append(`<img src="${url}">`);
 
 })
 });
